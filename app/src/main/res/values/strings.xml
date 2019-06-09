@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Wordpad</string>
+    <string name="search">search</string>
+    <string name="edit">edit</string>
 </resources>
