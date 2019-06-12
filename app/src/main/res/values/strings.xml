@@ -2,4 +2,5 @@
     <string name="app_name">Wordpad</string>
     <string name="search">search</string>
     <string name="edit">edit</string>
+    <string name="title_activity_func_b">FuncB</string>
 </resources>
