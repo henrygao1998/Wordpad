@@ -8,10 +8,12 @@ public class ContentModel {
 
 
     public int getId() {
+
         return id;
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
@@ -25,18 +27,22 @@ public class ContentModel {
     }
 
     public int getImageView() {
+
         return imageView;
     }
 
     public void setImageView(int imageView) {
+
         this.imageView = imageView;
     }
 
     public String getText() {
+
         return text;
     }
 
     public void setText(String text) {
+
         this.text = text;
     }
 
