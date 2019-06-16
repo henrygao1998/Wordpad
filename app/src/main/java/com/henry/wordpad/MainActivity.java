@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     //导航视图
     private NavigationView mNavigationView;
+    Button Btn1;
+    Button Btn2;
+    Button Btn3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +32,35 @@ public class MainActivity extends AppCompatActivity {
 
         initViews();
         initEvents();
+        Btn1 = findViewById(R.id.btn1);
+        Btn2 = findViewById(R.id.btn2);
+        Btn3 = findViewById(R.id.btn3);
+        Btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, Personal.class);
+                startActivity(intent);
+            }
+        });
+        Btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, Delete.class);
+                startActivity(intent);
+            }
+        });
+        Btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, Edit.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     private void initViews() {
         mImgMenu = findViewById(R.id.img_menu);
@@ -70,4 +103,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
 }
