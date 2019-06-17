@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
     private NavigationView mNavigationView;
     Button Btn1;
     Button Btn2;
-    Button Btn3;
 
 
     @Override
@@ -69,16 +68,16 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
         setContentView(R.layout.activity_main);
 
 
-        tv_content = (TextView) findViewById(R.id.tv_content);
-        listview = (ListView) findViewById(R.id.listview);
+        tv_content = findViewById(R.id.tv_content);
+        listview = findViewById(R.id.listview);
         dataList = new ArrayList<Map<String, Object>>();
 
         mContext = this;
         initViews();
         initEvents();
-        Btn1 = findViewById(R.id.btn1);
-        Btn2 = findViewById(R.id.btn2);
-        addNote = (Button) findViewById(R.id.btn3);
+        Btn1 = findViewById(R.id.btn_personal);
+        Btn2 = findViewById(R.id.btn_trash);
+        addNote = findViewById(R.id.btn_edit);
         addNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -215,28 +214,23 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
     @Override
     public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
         Edit.ENTER_STATE = 1;
-        // Log.d("arg2", arg2 + "");
-        // TextView
-        // content=(TextView)listview.getChildAt(arg2).findViewById(R.id.tv_content);
-        // String content1=content.toString();
+
+
         String content = listview.getItemAtPosition(arg2) + "";
-        String content1 = content.substring(content.indexOf("=") + 1, content.indexOf(","));
-        Log.d("CONTENT", content1);
-        Cursor c = dbread.query("note", null, "content=" + "'" + content1 + "'", null, null, null, null);
+        Log.d("CONTENT", content);
+        String content1 = content.substring(content.indexOf("tv_content="));
+        String content2 = content1.substring(content1.indexOf("=") + 1, content1.indexOf("}"));
+        Cursor c = dbread.query("note", null, "content=" + "'" + content2 + "'", null, null, null, null);
+
+        Log.d("CONTENT1", content1);
+        Log.d("CONTENT2", content2);
         while (c.moveToNext()) {
-            String No = c.getString(c.getColumnIndex("_id"));
-            Log.d("TEXT", No);
-            // Intent intent = new Intent(mContext, noteEdit.class);
-            // intent.putExtra("data", text);
-            // setResult(4, intent);
-            // // intent.putExtra("data",text);
-            // startActivityForResult(intent, 3);
-            Intent myIntent = new Intent();
+            Intent myIntent = new Intent(MainActivity.this, Edit.class);
             Bundle bundle = new Bundle();
             bundle.putString("info", content1);
-            Edit.id = Integer.parseInt(No);
             myIntent.putExtras(bundle);
-            myIntent.setClass(MainActivity.this, Edit.class);
+
+
             startActivityForResult(myIntent, 1);
         }
     }
@@ -249,7 +243,8 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
         if (requestCode == 1 && resultCode == 2) {
             RefreshNotesList();
         }
-    }    // 点击listview中某一项长时间的点击事件
+    }
+    // 点击listview中某一项长时间的点击事件
 
     @Override
     public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {

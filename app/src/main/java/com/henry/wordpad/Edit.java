@@ -37,12 +37,17 @@ public class Edit extends Activity {
         // 设置无标题
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_edit);
-        tv_date = (TextView) findViewById(R.id.tv_date);
+
+        et_content = findViewById(R.id.et_content);
+
+        tv_date = findViewById(R.id.tv_date);
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String dateString = sdf.format(date);
         tv_date.setText(dateString);
-        et_content = (EditText) findViewById(R.id.et_content);
+
+
+
         // 设置软键盘自动弹出
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         DB = new NotesDB(this);
@@ -51,8 +56,9 @@ public class Edit extends Activity {
         last_content = myBundle.getString("info");
         Log.d("LAST_CONTENT", last_content);
         et_content.setText(last_content);
+
         // 确认按钮的点击事件
-        btn_ok = (Button) findViewById(R.id.btn4);
+        btn_ok = findViewById(R.id.btn_save);
         btn_ok.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
                 // 获取日志内容
@@ -60,7 +66,8 @@ public class Edit extends Activity {
                 Log.d("LOG1", content);
                 // 获取写日志时间
                 Date date = new Date();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd ");
                 String dateNum = sdf.format(date);
                 String sql;
                 String sql_count = "SELECT COUNT(*) FROM note";
