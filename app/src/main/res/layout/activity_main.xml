@@ -18,9 +18,10 @@
 
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:orientation="vertical"
+            android:background="#ffffff"
             android:gravity="center_vertical"
-            android:background="#ffffff">
+            android:orientation="vertical">
+
             <ImageView
                 android:id="@+id/img_menu"
                 android:layout_width="62dp"
@@ -50,14 +51,22 @@
 
         </RelativeLayout>
 
-            <EditText
-                android:id="@+id/search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/search"
-                android:drawableLeft="@drawable/search"
-                android:background="@drawable/bg_edittext"
-                android:inputType="text" />
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edittext"
+            android:drawableLeft="@drawable/search"
+            android:hint="@string/search"
+            android:inputType="text" />
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#81966F">
+        </ListView>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -72,16 +81,16 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/recycle_bin"
-                android:onClick="OnClick"/>
+                android:onClick="OnClick" />
 
             <Button
                 android:id="@+id/btn3"
-                android:background="@drawable/edit"
                 android:layout_width="54dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:onClick="OnClick"/>
+                android:background="@drawable/edit"
+                android:onClick="OnClick" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -97,12 +106,11 @@
         android:layout_width="320dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/head_layout"
-        app:menu="@menu/drawer"
         android:background="#ffffff"
+        app:headerLayout="@layout/head_layout"
+        app:itemIconTint="@color/nav_drawer_menu_text_color"
         app:itemTextAppearance="@style/nav_drawer_menu_text_style"
-        app:itemIconTint="@color/nav_drawer_menu_text_color" />
-
+        app:menu="@menu/drawer" />
 
 
 </android.support.v4.widget.DrawerLayout>

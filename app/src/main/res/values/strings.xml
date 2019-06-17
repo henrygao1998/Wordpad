@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Wordpad</string>
     <string name="search">search</string>
-    <string name="edit">edit</string>
+    <string name="edit">Edit Wordpad</string>
     <string name="title_activity_func_b">FuncB</string>
     <string name="title_activity_slider">SliderActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -19,4 +19,6 @@
     <string name="permission_rationale">hao</string>
     <string name="error_incorrect_password">notgood</string>
     <string name="personal">Personal</string>
+    <string name="save">Save</string>
+
 </resources>
