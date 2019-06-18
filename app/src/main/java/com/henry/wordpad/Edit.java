@@ -38,13 +38,13 @@ public class Edit extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_edit);
 
-        et_content = findViewById(R.id.et_content);
-
         tv_date = findViewById(R.id.tv_date);
         Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateString = sdf.format(date);
         tv_date.setText(dateString);
+        et_content = findViewById(R.id.et_content);
+
 
 
 
@@ -66,8 +66,7 @@ public class Edit extends Activity {
                 Log.d("LOG1", content);
                 // 获取写日志时间
                 Date date = new Date();
-
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd ");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
                 String dateNum = sdf.format(date);
                 String sql;
                 String sql_count = "SELECT COUNT(*) FROM note";
@@ -95,7 +94,7 @@ public class Edit extends Activity {
                 finish();
             }
         });
-        btn_cancel = (Button) findViewById(R.id.btn_return_4);
+        btn_cancel =  findViewById(R.id.btn_return_4);
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

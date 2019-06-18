@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
         DB = new NotesDB(this);
         dbread = DB.getReadableDatabase();
         // 清空数据库中表的内容
-        // dbread.execSQL("delete from note");
+        //dbread.execSQL("delete from note");
         RefreshNotesList();
         listview.setOnItemClickListener(this);
         listview.setOnItemLongClickListener(this);
@@ -217,20 +217,22 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
 
 
         String content = listview.getItemAtPosition(arg2) + "";
-        Log.d("CONTENT", content);
         String content1 = content.substring(content.indexOf("tv_content="));
         String content2 = content1.substring(content1.indexOf("=") + 1, content1.indexOf("}"));
         Cursor c = dbread.query("note", null, "content=" + "'" + content2 + "'", null, null, null, null);
 
         Log.d("CONTENT1", content1);
         Log.d("CONTENT2", content2);
+
         while (c.moveToNext()) {
-            Intent myIntent = new Intent(MainActivity.this, Edit.class);
+            String No = c.getString(c.getColumnIndex("_id"));
+            Log.i("TEXT",No);
+            Intent myIntent = new Intent();
             Bundle bundle = new Bundle();
-            bundle.putString("info", content1);
+            bundle.putString("info", content2);
+            Edit.id = Integer.parseInt(No);
             myIntent.putExtras(bundle);
-
-
+            myIntent.setClass(MainActivity.this, Edit.class);
             startActivityForResult(myIntent, 1);
         }
     }
@@ -256,8 +258,9 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String content = listview.getItemAtPosition(n) + "";
-                String content1 = content.substring(content.indexOf("=") + 1, content.indexOf(","));
-                Cursor c = dbread.query("note", null, "content=" + "'" + content1 + "'", null, null, null, null);
+                String content1 = content.substring(content.indexOf("tv_content="));
+                String content2 = content1.substring(content1.indexOf("=") + 1, content1.indexOf("}"));
+                Cursor c = dbread.query("note", null, "content=" + "'" + content2 + "'", null, null, null, null);
                 while (c.moveToNext()) {
                     String id = c.getString(c.getColumnIndex("_id"));
                     String sql_del = "update note set content='' where _id=" + id;
