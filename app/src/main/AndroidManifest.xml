@@ -12,8 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".News" />
         <activity android:name=".Personal" />
         <activity android:name=".Edit" />
@@ -28,6 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Stock" />
+        <activity android:name=".RateCalcActivity"></activity>
+        <activity android:name=".StockListActivity"/>
+        <activity android:name=".MyListActivity"/>
     </application>
 
 </manifest>

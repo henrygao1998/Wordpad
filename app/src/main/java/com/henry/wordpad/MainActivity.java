@@ -17,6 +17,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -28,6 +29,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -48,6 +50,12 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
     private TextView tv_content;
     private NotesDB DB;
     private SQLiteDatabase dbread;
+
+    private ListView listview1;
+    private List<Map<String, Object>> personalList = new ArrayList<Map<String, Object>>();
+    private List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>();
+    private EditText editText;
+    private SimpleAdapter adapter;
 
 
     private ImageView mImgMenu;
@@ -71,8 +79,9 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
         tv_content = findViewById(R.id.tv_content);
         listview = findViewById(R.id.listview);
         dataList = new ArrayList<Map<String, Object>>();
-
         mContext = this;
+
+
         initViews();
         initEvents();
         Btn1 = findViewById(R.id.btn_personal);
@@ -141,20 +150,23 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.menu_info:
+                    case R.id.menu_news:
                         /* 新建一个Intent对象 */
-                        Intent intent = new Intent();
+                        Intent intent1 = new Intent();
                         /* 指定intent要启动的类 */
-                        intent.setClass(MainActivity.this, News.class);
+                        intent1.setClass(MainActivity.this, News.class);
                         /* 启动一个新的Activity */
-                        startActivity(intent);
+                        startActivity(intent1);
                         /* 关闭当前的Activity */
                         MainActivity.this.finish();
                         break;
                     //Toast.makeText(MainActivity.this, "个人信息", Toast.LENGTH_SHORT).show();
 
-                    case R.id.menu_pwd:
-                        Toast.makeText(MainActivity.this, "修改密码", Toast.LENGTH_SHORT).show();
+                    case R.id.menu_stock:
+                        Intent intent2 = new Intent();
+                        intent2.setClass(MainActivity.this, Stock.class);
+                        startActivity(intent2);
+                        MainActivity.this.finish();
                         break;
                 }
                 //关闭侧滑菜单
@@ -226,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
 
         while (c.moveToNext()) {
             String No = c.getString(c.getColumnIndex("_id"));
-            Log.i("TEXT",No);
+            Log.i("TEXT", No);
             Intent myIntent = new Intent();
             Bundle bundle = new Bundle();
             bundle.putString("info", content2);

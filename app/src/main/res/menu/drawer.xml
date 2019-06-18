@@ -2,13 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:id="@+id/group0">
         <item
-            android:id="@+id/menu_info"
+            android:id="@+id/menu_news"
             android:icon="@drawable/news"
-            android:title="个人信息"/>
-
+            android:title="@string/news"/>
         <item
-            android:id="@+id/menu_pwd"
+            android:id="@+id/menu_stock"
             android:icon="@drawable/news"
-            android:title="修改密码"/>
+            android:title="@string/stock"/>
     </group>
     </menu>

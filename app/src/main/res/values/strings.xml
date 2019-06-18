@@ -20,5 +20,7 @@
     <string name="error_incorrect_password">notgood</string>
     <string name="personal">Personal</string>
     <string name="save">Save</string>
+    <string name="news">News</string>
+    <string name="stock">Stock</string>
 
 </resources>

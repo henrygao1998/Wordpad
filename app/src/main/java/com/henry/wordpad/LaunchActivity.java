@@ -20,6 +20,6 @@ public class LaunchActivity extends Activity {
                 startActivity(intent);
                 LaunchActivity.this.finish();
             }
-        }, 3000);
+        }, 1500);
     }
 }
