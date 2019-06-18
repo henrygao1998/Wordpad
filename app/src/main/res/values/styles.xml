@@ -27,5 +27,13 @@
         <item name="android:textSize">16sp</item>
         <item name="android:padding">5dp</item>
     </style>
+    
+    <!-- 欢迎界面 -->
+    <style name="ThemeLaunch" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:background">@drawable/launch</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
 
 </resources>

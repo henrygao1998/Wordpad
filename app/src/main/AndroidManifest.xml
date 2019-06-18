@@ -13,16 +13,21 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".News" />
+        <activity android:name=".Personal" />
+        <activity android:name=".Edit" />
+        <activity android:name=".Delete" />
+        <activity
+            android:name=".LaunchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ThemeLaunch">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".News" />
-        <activity android:name=".Personal" />
-        <activity android:name=".Edit" />
-        <activity android:name=".Delete"></activity>
     </application>
 
 </manifest>
