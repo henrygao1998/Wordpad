@@ -28,19 +28,19 @@ public class StockListActivity extends ListActivity implements Runnable {
     String data[] = {"wait..."};
     Handler handler;
     private String logDate = "";
-    private final String DATE_SP_KEY = "lastRateDateStr";
+    private final String DATE_SP_KEY = "lastStockDateStr";
 
     @SuppressLint("HandlerLeak")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             // setContentView(R.layout.activity_rate_list);
-            SharedPreferences sp = getSharedPreferences("myrate",Context.MODE_PRIVATE);
+            SharedPreferences sp = getSharedPreferences("mystock",Context.MODE_PRIVATE);
             logDate = sp.getString(DATE_SP_KEY,"");
-            Log.i("list","lastRateDateStr=" + logDate);
+            Log.i("list","lastStockDateStr=" + logDate);
 
             List<String> list1 = new ArrayList<String>();
-            for(int i=1;i<100;i++){
+            for(int i=1;i<11;i++){
                 list1.add("item" + i);
             }
             ListAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list1);
@@ -67,15 +67,15 @@ public class StockListActivity extends ListActivity implements Runnable {
     public void run() {
         //获取网络数据、放入list带回到主线程中
         List<String> retList = new ArrayList<>();
-        String curDateStr = (new SimpleDateFormat("yyyy-MM-dd")).format(new Date());
-        Log.i("run","curDateStr:" + curDateStr + "logDate:" + logDate);
+        String StockDateStr = (new SimpleDateFormat("yyyy-MM-dd")).format(new Date());
+        Log.i("run","StockDateStr:" + StockDateStr + "logDate:" + logDate);
 
-        if(curDateStr.equals(logDate)){
+        if(StockDateStr.equals(logDate)){
             //如果相等，则不从网络中获取数据
             Log.i("run","日期相等，从数据库中获取数据");
             StockManager manager = new StockManager(this);
             for(StockItem item : manager.listAll()){
-                retList.add(item.getCurName() + "-->" + item.getCurRate());
+                retList.add(item.getStockName() + "-->" + item.getStockIndex());
             }
         }else{
             //从网络获取数据
@@ -83,7 +83,7 @@ public class StockListActivity extends ListActivity implements Runnable {
             Document doc = null;
             try {
                 Thread.sleep(1000);
-                doc = Jsoup.connect("http://www.usd-cny.com/bankofchina.htm").get();
+                doc = Jsoup.connect("http://data.10jqka.com.cn/funds/hyzjl/").get();
                 // doc = Jsoup.parse(html);
                 Elements tables = doc.getElementsByTag("table");
 
@@ -91,31 +91,31 @@ public class StockListActivity extends ListActivity implements Runnable {
 
                 //获取TD中的数据
                 Elements tds = table1.getElementsByTag("td");
-                List<StockItem> rateList = new ArrayList<StockItem>();
+                List<StockItem> indexList = new ArrayList<StockItem>();
 
-                for(int i = 0;i<tds.size();i+=6) {
+                for(int i = 1;i<tds.size();i+= 11) {
                     Element td1 = tds.get(i);
-                    Element td2 = tds.get(i + 5);
+                    Element td2 = tds.get(i+1);
 
                     String str1 = td1.text();
                     String val = td2.text();
 
                     Log.i(TAG,"run:" + str1 + "==>" + val);
                     retList.add(str1 + "==>" + val);
-                    rateList.add(new StockItem(str1,val));
+                    indexList.add(new StockItem(str1,val));
                 }
 
                 //把数据写入到数据库中
                 StockManager manager = new StockManager(this);
                 manager.deleteAll();
-                manager.addAll(rateList);
+                manager.addAll(indexList);
 
                 //记录更新日期
-                SharedPreferences sp = getSharedPreferences("myrate",Context.MODE_PRIVATE);
+                SharedPreferences sp = getSharedPreferences("mystock",Context.MODE_PRIVATE);
                 SharedPreferences.Editor edit = sp.edit();
-                edit.putString(DATE_SP_KEY, curDateStr);
+                edit.putString(DATE_SP_KEY, StockDateStr);
                 edit.commit();
-                Log.i("run","更新日期结束：" + curDateStr);
+                Log.i("run","更新日期结束：" + StockDateStr);
 
             } catch (IOException e) {
                 e.printStackTrace();

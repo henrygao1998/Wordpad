@@ -8,8 +8,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     private static final int VERSION = 1;
-    private static final String DB_NAME = "myrate.db";
-    public static final String TB_NAME = "tb_rates";
+    private static final String DB_NAME = "mystock.db";
+    public static final String TB_NAME = "tb_stockes";
 
     public DBHelper(Context context,String name,SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -21,7 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " +TB_NAME+ "(ID INTEGER PRIMARY KEY AUTOINCREMENT,CURNAME TEXT,CURRATE TEXT)");
+        db.execSQL("CREATE TABLE " +TB_NAME+ "(ID INTEGER PRIMARY KEY AUTOINCREMENT,STOCKNAME TEXT,STOCKINDEX TEXT)");
     }
 
     @Override

@@ -20,8 +20,8 @@ public class StockManager {
     public void add(StockItem item){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("curname", item.getCurName());
-        values.put("currate", item.getCurRate());
+        values.put("stockname", item.getStockName());
+        values.put("stockindex", item.getStockIndex());
         db.insert(TBNAME,null,values);
         db.close();
     }
@@ -36,8 +36,8 @@ public class StockManager {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         for(StockItem item : list){
             ContentValues values = new ContentValues();
-            values.put("curname",item.getCurName());
-            values.put("currate",item.getCurRate());
+            values.put("stockname",item.getStockName());
+            values.put("stockindex",item.getStockIndex());
             db.insert(TBNAME,null,values);
         }
         db.close();
@@ -45,21 +45,21 @@ public class StockManager {
 
 
      public List<StockItem> listAll(){
-        List<StockItem> rateList = null;
+        List<StockItem> stockList = null;
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.query(TBNAME,null,null,null,null,null,null);
         if(cursor!=null){
-            rateList = new ArrayList<StockItem>();
+           stockList = new ArrayList<StockItem>();
             while(cursor.moveToNext()){
                 StockItem item = new StockItem();
                 item.setId(cursor.getInt(cursor.getColumnIndex("ID")));
-                item.setCurName(cursor.getString(cursor.getColumnIndex("CURNAME")));
-                item.setCurRate(cursor.getString(cursor.getColumnIndex("CURRATE")));
-                rateList.add(item);
+                item.setStockName(cursor.getString(cursor.getColumnIndex("STOCKNAME")));
+                item.setStockIndex(cursor.getString(cursor.getColumnIndex("STOCKINDEX")));
+                stockList.add(item);
             }
             cursor.close();
         }
         db.close();
-        return rateList;
+        return stockList;
     }
 }
