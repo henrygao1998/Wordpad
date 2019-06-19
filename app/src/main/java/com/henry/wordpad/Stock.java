@@ -5,11 +5,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Stock extends AppCompatActivity {
     TextView show;
-
+    Button Btn;
 
     @SuppressLint("HandlerLeak")
     @Override
@@ -25,6 +26,17 @@ public class Stock extends AppCompatActivity {
             }
 
         });
+
+        Btn = findViewById(R.id.btn_return_5);
+        Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Stock.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
+
 

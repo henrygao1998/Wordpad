@@ -22,6 +22,8 @@ public class StockManager {
         ContentValues values = new ContentValues();
         values.put("stockname", item.getStockName());
         values.put("stockindex", item.getStockIndex());
+        values.put("stocklead", item.getStockLead());
+        values.put("stockrange", item.getStockRange());
         db.insert(TBNAME,null,values);
         db.close();
     }
@@ -38,6 +40,8 @@ public class StockManager {
             ContentValues values = new ContentValues();
             values.put("stockname",item.getStockName());
             values.put("stockindex",item.getStockIndex());
+            values.put("stocklead", item.getStockLead());
+            values.put("stockrange", item.getStockRange());
             db.insert(TBNAME,null,values);
         }
         db.close();
@@ -55,6 +59,8 @@ public class StockManager {
                 item.setId(cursor.getInt(cursor.getColumnIndex("ID")));
                 item.setStockName(cursor.getString(cursor.getColumnIndex("STOCKNAME")));
                 item.setStockIndex(cursor.getString(cursor.getColumnIndex("STOCKINDEX")));
+                item.setStockLead(cursor.getString(cursor.getColumnIndex("STOCKLEAD")));
+                item.setStockRange(cursor.getString(cursor.getColumnIndex("STOCKRANGE")));
                 stockList.add(item);
             }
             cursor.close();

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
     android:orientation="vertical"
     tools:context=".Personal">
 
@@ -12,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="vertical"
-        android:gravity="center_vertical"
-        android:background="#ffffff">
+        android:background="#87CEEB"
+        android:gravity="center_vertical">
 
         <Button
             android:id="@+id/btn_return_2"

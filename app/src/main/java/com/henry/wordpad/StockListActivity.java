@@ -40,7 +40,7 @@ public class StockListActivity extends ListActivity implements Runnable {
             Log.i("list","lastStockDateStr=" + logDate);
 
             List<String> list1 = new ArrayList<String>();
-            for(int i=1;i<11;i++){
+            for(int i=1;i<100;i++){
                 list1.add("item" + i);
             }
             ListAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list1);
@@ -68,25 +68,23 @@ public class StockListActivity extends ListActivity implements Runnable {
         //获取网络数据、放入list带回到主线程中
         List<String> retList = new ArrayList<>();
         String StockDateStr = (new SimpleDateFormat("yyyy-MM-dd")).format(new Date());
-        Log.i("run","StockDateStr:" + StockDateStr + "logDate:" + logDate);
+        //Log.i("run","StockDateStr:" + StockDateStr + "logDate:" + logDate);
 
         if(StockDateStr.equals(logDate)){
             //如果相等，则不从网络中获取数据
             Log.i("run","日期相等，从数据库中获取数据");
             StockManager manager = new StockManager(this);
             for(StockItem item : manager.listAll()){
-                retList.add(item.getStockName() + "-->" + item.getStockIndex());
+                retList.add("行业： "+item.getStockName() + "  涨跌幅：" + item.getStockIndex() +"                                                             "+"领涨股： "+ item.getStockLead()+ "  涨跌幅：" +item.getStockRange());
             }
         }else{
             //从网络获取数据
             Log.i("run","日期不相等，从网络中获取数据");
             Document doc = null;
             try {
-                Thread.sleep(1000);
+                Thread.sleep(0);
                 doc = Jsoup.connect("http://data.10jqka.com.cn/funds/hyzjl/").get();
-                // doc = Jsoup.parse(html);
                 Elements tables = doc.getElementsByTag("table");
-
                 Element table1 = tables.get(0);
 
                 //获取TD中的数据
@@ -95,14 +93,18 @@ public class StockListActivity extends ListActivity implements Runnable {
 
                 for(int i = 1;i<tds.size();i+= 11) {
                     Element td1 = tds.get(i);
-                    Element td2 = tds.get(i+1);
+                    Element td2 = tds.get(i+2);
+                    Element td3 = tds.get(i+7);
+                    Element td4 = tds.get(i+8);
 
                     String str1 = td1.text();
-                    String val = td2.text();
+                    String str2 = td2.text();
+                    String str3 = td3.text();
+                    String str4 = td4.text();
 
-                    Log.i(TAG,"run:" + str1 + "==>" + val);
-                    retList.add(str1 + "==>" + val);
-                    indexList.add(new StockItem(str1,val));
+                   // Log.i(TAG,"run:" + str1 + "==>" + val);
+                    retList.add("行业： "+str1 + "  涨跌幅：" + str2 +"                                                             "+"领涨股： "+ str3 + "  涨跌幅：" +str4);
+                    indexList.add(new StockItem(str1,str2,str3,str4));
                 }
 
                 //把数据写入到数据库中
