@@ -19,4 +19,10 @@
     <string name="stock">Stock</string>
     <string name="Stock">Stock</string>
     <string name="industry">HANGYEXINXIYULINGZHANGGU</string>
+    <string name="setting">Setting</string>
+    <string name="more">More</string>
+    <string name="about">About</string>
+    <string name="game">Game</string>
+    <string name="news1">news1</string>
+    <string name="news2">News2</string>
 </resources>

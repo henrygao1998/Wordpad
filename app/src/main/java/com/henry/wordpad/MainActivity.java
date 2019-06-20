@@ -28,6 +28,7 @@ import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -51,12 +52,6 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
     private NotesDB DB;
     private SQLiteDatabase dbread;
 
-    private ListView listview1;
-    private List<Map<String, Object>> personalList = new ArrayList<Map<String, Object>>();
-    private List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>();
-    private EditText editText;
-    private SimpleAdapter adapter;
-
 
     private ImageView mImgMenu;
     /**
@@ -65,8 +60,8 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
     private DrawerLayout mDrawerLayout;
     //导航视图
     private NavigationView mNavigationView;
-    Button Btn1;
-    Button Btn2;
+
+    // Button Btn2;
 
 
     @Override
@@ -84,8 +79,8 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
 
         initViews();
         initEvents();
-        Btn1 = findViewById(R.id.btn_personal);
-        Btn2 = findViewById(R.id.btn_trash);
+        // Btn1 = findViewById(R.id.btn_personal);
+        // Btn2 = findViewById(R.id.btn_trash);
         addNote = findViewById(R.id.btn_edit);
         addNote.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,28 +103,29 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
         listview.setOnScrollListener(this);
 
 
-        Btn1.setOnClickListener(new View.OnClickListener()
-
-        {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, Personal.class);
-                startActivity(intent);
-            }
-        });
-        Btn2.setOnClickListener(new View.OnClickListener()
-
-        {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, Delete.class);
-                startActivity(intent);
-            }
-        });
+//        Btn1.setOnClickListener(new View.OnClickListener()
+//
+//        {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent();
+//                intent.setClass(MainActivity.this, Personal.class);
+//                startActivity(intent);
+//            }
+//        });
+//        Btn2.setOnClickListener(new View.OnClickListener()
+//
+//        {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent();
+//                intent.setClass(MainActivity.this, Delete.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
+
 
     private void initViews() {
         mImgMenu = findViewById(R.id.img_menu);
@@ -150,22 +146,28 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
+                    case R.id.menu_personal:
+                        Intent intent1 = new Intent();
+                        intent1.setClass(MainActivity.this, Personal.class);
+                        startActivity(intent1);
+                        MainActivity.this.finish();
+                        break;
                     case R.id.menu_news:
                         /* 新建一个Intent对象 */
-                        Intent intent1 = new Intent();
+                        Intent intent2 = new Intent();
                         /* 指定intent要启动的类 */
-                        intent1.setClass(MainActivity.this, News.class);
+                        intent2.setClass(MainActivity.this, News.class);
                         /* 启动一个新的Activity */
-                        startActivity(intent1);
+                        startActivity(intent2);
                         /* 关闭当前的Activity */
                         MainActivity.this.finish();
                         break;
                     //Toast.makeText(MainActivity.this, "个人信息", Toast.LENGTH_SHORT).show();
 
                     case R.id.menu_stock:
-                        Intent intent2 = new Intent();
-                        intent2.setClass(MainActivity.this, Stock.class);
-                        startActivity(intent2);
+                        Intent intent3 = new Intent();
+                        intent3.setClass(MainActivity.this, Stock.class);
+                        startActivity(intent3);
                         MainActivity.this.finish();
                         break;
                 }
@@ -296,4 +298,5 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+
 }

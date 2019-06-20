@@ -37,7 +37,7 @@ public class StockListActivity extends ListActivity implements Runnable {
             // setContentView(R.layout.activity_rate_list);
             SharedPreferences sp = getSharedPreferences("mystock",Context.MODE_PRIVATE);
             logDate = sp.getString(DATE_SP_KEY,"");
-            Log.i("list","lastStockDateStr=" + logDate);
+            //Log.i("list","lastStockDateStr=" + logDate);
 
             List<String> list1 = new ArrayList<String>();
             for(int i=1;i<100;i++){
@@ -67,7 +67,7 @@ public class StockListActivity extends ListActivity implements Runnable {
     public void run() {
         //获取网络数据、放入list带回到主线程中
         List<String> retList = new ArrayList<>();
-        String StockDateStr = (new SimpleDateFormat("yyyy-MM-dd")).format(new Date());
+        String StockDateStr = (new SimpleDateFormat("yyyy-MM-dd HH:mm" )).format(new Date());
         //Log.i("run","StockDateStr:" + StockDateStr + "logDate:" + logDate);
 
         if(StockDateStr.equals(logDate)){

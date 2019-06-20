@@ -28,8 +28,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Stock" />
-        <activity android:name=".StockListActivity"/>
-        <activity android:name=".MyListActivity"/>
+        <activity android:name=".StockListActivity" />
+        <activity android:name=".MyListActivity" />
     </application>
 
 </manifest>
