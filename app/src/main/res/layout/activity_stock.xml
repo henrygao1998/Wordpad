@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Stock">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:background="#87CEEB"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_return_5"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/return_1" />
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/btn_return_5"
+            android:layout_toRightOf="@+id/btn_return_5"
+            android:text="@string/title"
+            android:textColor="#000000"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/Stock"
+            android:textColor="#000000"
+            android:textSize="45dp" />
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btn_step"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ba2a2a"
+        android:text="@string/industry" />
+
+    <TextView
+        android:id="@+id/textviewstock1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="行业板块分类介绍"
+        android:textColor="#000000"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/textviewstock2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="        中国证监会对上市公司有官方的分类标准。每季度要求对公司大于50%的业务来归类公司所属行业。这个内容可以在证监会网站上查到上个季度的所有公司行业分类。
+其中包括：A农、林、牧、渔业；B采矿业；C制造业；D电力、热力、燃气及水生产和供应业；E建筑业；F批发和零售业；G交通运输、仓储和邮政业；H住宿和餐饮业；I信息传输、软件和信息技术服务业；J金融业；K房地产业；L租赁和商务服务业；M科学研究和技术服务业；N水利、环境和公共设施管理业；O居民服务、修理和其他服务业；P教育；Q卫生和社会工作；R文化、体育和娱乐业；S综合；
+共19大类，及二级90小类。"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+</LinearLayout>
