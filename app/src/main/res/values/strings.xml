@@ -25,4 +25,20 @@
     <string name="game">Game</string>
     <string name="news1">news1</string>
     <string name="news2">News2</string>
+    <string name="education">Educaton</string>
+    <string name="edu_d_1">Haodaxuezaixian</string>
+    <string name="edu_d_2">Ichunqiu</string>
+    <string name="edu_d_3">51CTO</string>
+    <string name="edu_d_4">Zhufengshequ</string>
+    <string name="edu_d_14">Maizixueyuan</string>
+    <string name="edu_d_13">Zhongguodaxuemuke</string>
+    <string name="edu_d_12">Xuetangzaixian</string>
+    <string name="edu_d_11">Mooczhongguo</string>
+    <string name="edu_d_10">Jisuanke</string>
+    <string name="edu_d_9">JIkexueyuan</string>
+    <string name="edu_d_8">Kaikeba</string>
+    <string name="edu_d_7">Dingnixuetang</string>
+    <string name="edu_d_6">Wangmendaxue</string>
+    <string name="edu_d_5">Yihuwang</string>
+
 </resources>

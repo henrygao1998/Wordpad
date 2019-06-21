@@ -5,11 +5,13 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
+import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -117,7 +119,11 @@ public class StockListActivity extends ListActivity implements Runnable {
                 SharedPreferences.Editor edit = sp.edit();
                 edit.putString(DATE_SP_KEY, StockDateStr);
                 edit.commit();
+
+                Looper.prepare();
+                Toast.makeText(getApplicationContext(), "更新时间: + StockDateStr", Toast.LENGTH_LONG).show();
                 Log.i("run","更新日期结束：" + StockDateStr);
+
 
             } catch (IOException e) {
                 e.printStackTrace();

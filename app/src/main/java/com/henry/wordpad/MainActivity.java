@@ -17,7 +17,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -28,18 +27,11 @@ import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import static android.widget.AbsListView.OnScrollListener.SCROLL_STATE_FLING;
-import static android.widget.AbsListView.OnScrollListener.SCROLL_STATE_IDLE;
-import static android.widget.NumberPicker.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL;
 
 
 public class MainActivity extends AppCompatActivity implements OnScrollListener, OnItemClickListener, OnItemLongClickListener {
@@ -156,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
                         /* 新建一个Intent对象 */
                         Intent intent2 = new Intent();
                         /* 指定intent要启动的类 */
-                        intent2.setClass(MainActivity.this, News.class);
+                        intent2.setClass(MainActivity.this, Education.class);
                         /* 启动一个新的Activity */
                         startActivity(intent2);
                         /* 关闭当前的Activity */

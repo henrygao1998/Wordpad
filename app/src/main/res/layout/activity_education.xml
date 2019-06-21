@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".News">
+    tools:context=".Education">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,8 +18,7 @@
             android:id="@+id/btn_return_1"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/return_1"
-            android:onClick="OnClick" />
+            android:background="@drawable/return_1"/>
 
         <TextView
             android:layout_width="65dp"
@@ -35,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="News"
+            android:text="@string/education"
             android:textColor="#000000"
             android:textSize="45dp" />
     </RelativeLayout>
@@ -51,6 +50,5 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 
 </LinearLayout>
