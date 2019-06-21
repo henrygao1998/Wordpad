@@ -25,7 +25,7 @@
     <string name="game">Game</string>
     <string name="news1">news1</string>
     <string name="news2">News2</string>
-    <string name="education">Educaton</string>
+    <string name="education">Education</string>
     <string name="edu_d_1">Haodaxuezaixian</string>
     <string name="edu_d_2">Ichunqiu</string>
     <string name="edu_d_3">51CTO</string>
@@ -40,5 +40,15 @@
     <string name="edu_d_7">Dingnixuetang</string>
     <string name="edu_d_6">Wangmendaxue</string>
     <string name="edu_d_5">Yihuwang</string>
+    <string name="edu_i_1">Berkeley</string>
+    <string name="edu_i_2">MIT</string>
+    <string name="edu_i_3">CMU</string>
+    <string name="edu_i_4">Openlearn</string>
+    <string name="edu_i_5">Washington</string>
+    <string name="edu_i_6">Tufts</string>
+    <string name="edu_i_7">KhanAcademy</string>
+    <string name="edu_i_8">EDX</string>
+    <string name="edu_i_9">Coursera</string>
+    <string name="edu_i_10">TED</string>
 
 </resources>

@@ -4,12 +4,88 @@
     android:layout_height="match_parent"
     tools:context=".EducationSecondFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:layout_gravity="center"
-        android:text="动物分类学家根据动物的各种特征（形态、细胞、遗传、生理、生态和地理分布等）进行分类，将动物依次分为6个主要等级，即门、纲、目、科、属、种。" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_edu_i1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edu_i_1" />
+                <Button
+                    android:id="@+id/btn_edu_i2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edu_i_2" />
+                <Button
+                    android:id="@+id/btn_edu_i3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edu_i_3" />
+                <Button
+                    android:id="@+id/btn_edu_i4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edu_i_4" />
+                <Button
+                    android:id="@+id/btn_edu_i5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edu_i_5" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_edu_i6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edu_i_10" />
+                <Button
+                    android:id="@+id/btn_edu_i7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edu_i_7" />
+                <Button
+                    android:id="@+id/btn_edu_i8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edu_i_8" />
+
+                <Button
+                    android:id="@+id/btn_edu_i9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edu_i_9" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
 </FrameLayout>

@@ -28,7 +28,6 @@ public class EducationFirstFragment extends Fragment {
     Button btn12;
     Button btn13;
     Button btn14;
-    Button btn15;
 
     public EducationFirstFragment() {
         // Required empty public constructor
@@ -142,7 +141,7 @@ public class EducationFirstFragment extends Fragment {
         btn10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://www.jisuanke.com/course");
+                Uri uri = Uri.parse("http://www.jisuanke.com/course");
                 Intent intent = new Intent(Intent.ACTION_VIEW,uri);
                 startActivity(intent);
             }

@@ -120,8 +120,6 @@ public class StockListActivity extends ListActivity implements Runnable {
                 edit.putString(DATE_SP_KEY, StockDateStr);
                 edit.commit();
 
-                Looper.prepare();
-                Toast.makeText(getApplicationContext(), "更新时间: + StockDateStr", Toast.LENGTH_LONG).show();
                 Log.i("run","更新日期结束：" + StockDateStr);
 
 
