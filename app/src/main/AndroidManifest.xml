@@ -14,10 +14,9 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".MainActivity" />
         <activity android:name=".Education" />
-        <activity android:name=".University"/>
+        <activity android:name=".University" />
         <activity android:name=".Personal" />
         <activity android:name=".Edit" />
-        <activity android:name=".Delete" />
         <activity
             android:name=".LaunchActivity"
             android:screenOrientation="portrait"
@@ -32,6 +31,9 @@
         <activity android:name=".StockListActivity" />
         <activity android:name=".MyListActivity" />
         <activity android:name=".MoveList" />
+        <activity android:name=".QSrank" />
+        <activity android:name=".QSrank2" />
+        <activity android:name=".QSrank3"></activity>
     </application>
 
 </manifest>

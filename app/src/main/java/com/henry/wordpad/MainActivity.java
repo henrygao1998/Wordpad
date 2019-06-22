@@ -32,6 +32,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 
 public class MainActivity extends AppCompatActivity implements OnScrollListener, OnItemClickListener, OnItemLongClickListener {
@@ -43,6 +44,10 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
     private TextView tv_content;
     private NotesDB DB;
     private SQLiteDatabase dbread;
+
+    private RollTextView rollTv;
+    private String [] textArrays = new String[]{"最新通知！！！","2019年QS世界大学排名新鲜出炉，点击查看"};
+
 
 
     private ImageView mImgMenu;
@@ -116,7 +121,25 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
 //            }
 //        });
 
+        //滚动
+        rollTv = findViewById(R.id.rollTv);
+        rollTv.setTextArraysAndClickListener(textArrays, new RollTextViewClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,QSrank.class));
+            }
+        });
+
     }
+
+
+
+    @Override
+    protected void onDestroy() {
+        rollTv.releaseResources();
+        super.onDestroy();
+    }
+
 
 
     private void initViews() {
