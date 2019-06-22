@@ -37,8 +37,7 @@
                     android:id="@+id/btn_edu_i3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/edu_i_3"
-                    />
+                    android:text="@string/edu_i_3" />
                 <Button
                     android:id="@+id/btn_edu_i4"
                     android:layout_width="match_parent"

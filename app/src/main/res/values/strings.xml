@@ -50,5 +50,6 @@
     <string name="edu_i_8">EDX</string>
     <string name="edu_i_9">Coursera</string>
     <string name="edu_i_10">TED</string>
+    <string name="university">University</string>
 
 </resources>

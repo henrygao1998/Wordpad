@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Personal">
+    android:orientation="vertical"
+    tools:context=".University">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,7 +15,7 @@
         android:gravity="center_vertical">
 
         <Button
-            android:id="@+id/btn_return_6"
+            android:id="@+id/btn_return_2"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:background="@drawable/return_1" />
@@ -24,10 +25,10 @@
             android:layout_height="50dp"
             android:textSize="12dp"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/btn_return_6"
+            android:layout_toEndOf="@+id/btn_return_2"
             android:text="@string/title"
             android:textColor="#000000"
-            android:layout_toRightOf="@+id/btn_return_6" />
+            android:layout_toRightOf="@+id/btn_return_2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +36,15 @@
             android:layout_centerInParent="true"
             android:textColor="#000000"
             android:textSize="45dp"
-            android:text="@string/personal" />
+            android:text="@string/university" />
     </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/Lv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+
 
 </LinearLayout>

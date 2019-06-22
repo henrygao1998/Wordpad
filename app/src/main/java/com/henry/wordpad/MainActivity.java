@@ -144,22 +144,28 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
                         startActivity(intent1);
                         MainActivity.this.finish();
                         break;
+                    case R.id.menu_university:
+                        Intent intent2 = new Intent();
+                        intent2.setClass(MainActivity.this, University.class);
+                        startActivity(intent2);
+                        MainActivity.this.finish();
+                        break;
                     case R.id.menu_news:
                         /* 新建一个Intent对象 */
-                        Intent intent2 = new Intent();
+                        Intent intent3 = new Intent();
                         /* 指定intent要启动的类 */
-                        intent2.setClass(MainActivity.this, Education.class);
+                        intent3.setClass(MainActivity.this, Education.class);
                         /* 启动一个新的Activity */
-                        startActivity(intent2);
+                        startActivity(intent3);
                         /* 关闭当前的Activity */
                         MainActivity.this.finish();
                         break;
                     //Toast.makeText(MainActivity.this, "个人信息", Toast.LENGTH_SHORT).show();
 
                     case R.id.menu_stock:
-                        Intent intent3 = new Intent();
-                        intent3.setClass(MainActivity.this, Stock.class);
-                        startActivity(intent3);
+                        Intent intent4 = new Intent();
+                        intent4.setClass(MainActivity.this, Stock.class);
+                        startActivity(intent4);
                         MainActivity.this.finish();
                         break;
                 }
