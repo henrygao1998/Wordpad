@@ -35,7 +35,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 
-public class MainActivity extends AppCompatActivity implements OnScrollListener, OnItemClickListener, OnItemLongClickListener {
+public class MainActivity extends AppCompatActivity implements  OnItemClickListener, OnItemLongClickListener {
     private Context mContext;
     private ListView listview;
     private SimpleAdapter simp_adapter;
@@ -97,29 +97,7 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
         RefreshNotesList();
         listview.setOnItemClickListener(this);
         listview.setOnItemLongClickListener(this);
-        listview.setOnScrollListener(this);
 
-
-//        Btn1.setOnClickListener(new View.OnClickListener()
-//
-//        {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent();
-//                intent.setClass(MainActivity.this, Personal.class);
-//                startActivity(intent);
-//            }
-//        });
-//        Btn2.setOnClickListener(new View.OnClickListener()
-//
-//        {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent();
-//                intent.setClass(MainActivity.this, Delete.class);
-//                startActivity(intent);
-//            }
-//        });
 
         //滚动
         rollTv = findViewById(R.id.rollTv);
@@ -191,6 +169,12 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
                         startActivity(intent4);
                         MainActivity.this.finish();
                         break;
+                    case R.id.menu_game:
+                        Intent intent5 = new Intent();
+                        intent5.setClass(MainActivity.this, Game.class);
+                        startActivity(intent5);
+                        MainActivity.this.finish();
+                        break;
                 }
                 //关闭侧滑菜单
                 mDrawerLayout.closeDrawers();
@@ -225,26 +209,9 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
         return dataList;
     }
 
-    @Override
-    public void onScroll(AbsListView arg0, int arg1, int arg2, int arg3) {
-        // TODO Auto-generated method stub
-    }
 
-    // 滑动listview监听事件
-    @Override
-    public void onScrollStateChanged(AbsListView arg0, int arg1) {
-        // TODO Auto-generated method stub
-        switch (arg1) {
-            case SCROLL_STATE_FLING:
-                Log.i("main", "用户在手指离开屏幕之前，由于用力的滑了一下，视图能依靠惯性继续滑动");
-            case SCROLL_STATE_IDLE:
-                Log.i("main", "视图已经停止滑动");
-            case SCROLL_STATE_TOUCH_SCROLL:
-                Log.i("main", "手指没有离开屏幕，试图正在滑动");
-        }
-    }
 
-    // 点击listview中某一项的监听事件
+
 
     @Override
     public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -281,7 +248,8 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
             RefreshNotesList();
         }
     }
-    // 点击listview中某一项长时间的点击事件
+
+
 
     @Override
     public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -314,10 +282,5 @@ public class MainActivity extends AppCompatActivity implements OnScrollListener,
         return true;
     }
 
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
-    }
 
 }

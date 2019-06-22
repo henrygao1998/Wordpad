@@ -107,11 +107,7 @@ public class Edit extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
-        // if (requestCode == 3 && resultCode == 4) {
-        // last_content=data.getStringExtra("data");
-        // Log.d("LAST_STRAING", last_content+"gvg");
-        // }
+
     }
 }
