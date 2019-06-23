@@ -12,18 +12,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Game extends AppCompatActivity {
     private SensorManager sensorManager;
     private Vibrator vibrator;
-    private static String strs[] = {"石头", "剪刀", "布"};
-    private static int pics[] = {R.drawable.edit, R.drawable.menu, R.drawable.personal};
+    private static String strs[] = {"很遗憾，没中奖","很遗憾，没中奖","很遗憾，没中奖","很遗憾，没中奖","恭喜中奖！", "恭喜中奖！", "恭喜中奖！","恭喜中奖！", "恭喜中奖！", "恭喜中奖！","恭喜中奖！", "恭喜中奖！"};
+    private static int pics[] = {R.drawable.empty,R.drawable.empty,R.drawable.empty,R.drawable.empty,R.drawable.money_1,R.drawable.money_1, R.drawable.money_1,R.drawable.money_1,R.drawable.money_1, R.drawable.money_1,R.drawable.money_1,R.drawable.money_1};
+    private static String strs2[] = {"不要放弃","不要放弃","不要放弃","不要放弃","¥0.01","¥0.1","¥1","¥10", "¥100", "¥1000","¥10000","¥100000"};
+    private static String strs3[] = {"再摇一次","再摇一次","再摇一次","再摇一次","小型奖：","小型奖：","小型奖：","中型奖：", "中型奖：", "大型奖：","超大型奖：","特等奖:"};
+
+
 
     private static final int SENSOR_SHAKE = 10;
 
-    private TextView text;
+
+    private TextView text,text2,text3;
     private ImageView img;
     Button Btn1;
 
@@ -32,6 +38,9 @@ public class Game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+
+        text3 = findViewById(R.id.text_attribute);
+        text2 = findViewById(R.id.text_amount);
         text = findViewById(R.id.txtlabel);
         img = findViewById(R.id.imageView);
 
@@ -100,7 +109,9 @@ public class Game extends AppCompatActivity {
                 case SENSOR_SHAKE:
                 //检测到摇晃，执行操作
                 java.util.Random r = new java.util.Random();
-                int num = Math.abs(r.nextInt())%3;
+                int num = Math.abs(r.nextInt())%12;
+                text3.setText(strs3[num]);
+                text2.setText(strs2[num]);
                 text.setText(strs[num]);
                 img.setImageResource(pics[num]);
                 break;

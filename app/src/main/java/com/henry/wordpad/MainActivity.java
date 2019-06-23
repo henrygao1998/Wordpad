@@ -35,7 +35,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 
-public class MainActivity extends AppCompatActivity implements  OnItemClickListener, OnItemLongClickListener {
+public class MainActivity extends AppCompatActivity implements OnItemClickListener, OnItemLongClickListener {
     private Context mContext;
     private ListView listview;
     private SimpleAdapter simp_adapter;
@@ -46,14 +46,12 @@ public class MainActivity extends AppCompatActivity implements  OnItemClickListe
     private SQLiteDatabase dbread;
 
     private RollTextView rollTv;
-    private String [] textArrays = new String[]{"最新通知！！！","2019年QS世界大学排名新鲜出炉，点击查看"};
-
+    private String[] textArrays = new String[]{"最新通知！！！", "2019年QS世界大学排名新鲜出炉，点击查看"};
 
 
     private ImageView mImgMenu;
-    /**
-     * 导航栏左侧的侧边栏的父容器
-     */
+
+     //导航栏左侧的侧边栏的父容器
     private DrawerLayout mDrawerLayout;
     //导航视图
     private NavigationView mNavigationView;
@@ -76,8 +74,6 @@ public class MainActivity extends AppCompatActivity implements  OnItemClickListe
 
         initViews();
         initEvents();
-        // Btn1 = findViewById(R.id.btn_personal);
-        // Btn2 = findViewById(R.id.btn_trash);
         addNote = findViewById(R.id.btn_edit);
         addNote.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,17 +95,16 @@ public class MainActivity extends AppCompatActivity implements  OnItemClickListe
         listview.setOnItemLongClickListener(this);
 
 
-        //滚动
+        //上面滚动
         rollTv = findViewById(R.id.rollTv);
         rollTv.setTextArraysAndClickListener(textArrays, new RollTextViewClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,QSrank.class));
+                startActivity(new Intent(MainActivity.this, QSrank.class));
             }
         });
 
     }
-
 
 
     @Override
@@ -117,7 +112,6 @@ public class MainActivity extends AppCompatActivity implements  OnItemClickListe
         rollTv.releaseResources();
         super.onDestroy();
     }
-
 
 
     private void initViews() {
@@ -139,9 +133,9 @@ public class MainActivity extends AppCompatActivity implements  OnItemClickListe
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.menu_personal:
+                    case R.id.menu_more:
                         Intent intent1 = new Intent();
-                        intent1.setClass(MainActivity.this, Personal.class);
+                        intent1.setClass(MainActivity.this, More.class);
                         startActivity(intent1);
                         MainActivity.this.finish();
                         break;
@@ -173,6 +167,13 @@ public class MainActivity extends AppCompatActivity implements  OnItemClickListe
                         Intent intent5 = new Intent();
                         intent5.setClass(MainActivity.this, Game.class);
                         startActivity(intent5);
+                        MainActivity.this.finish();
+                        break;
+
+                    case R.id.menu_about:
+                        Intent intent6 = new Intent();
+                        intent6.setClass(MainActivity.this, About.class);
+                        startActivity(intent6);
                         MainActivity.this.finish();
                         break;
                 }
@@ -210,9 +211,6 @@ public class MainActivity extends AppCompatActivity implements  OnItemClickListe
     }
 
 
-
-
-
     @Override
     public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
         Edit.ENTER_STATE = 1;
@@ -248,7 +246,6 @@ public class MainActivity extends AppCompatActivity implements  OnItemClickListe
             RefreshNotesList();
         }
     }
-
 
 
     @Override

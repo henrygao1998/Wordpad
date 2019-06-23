@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class EducationAdapter extends FragmentPagerAdapter {
 
-    private String[] title = new String[]{"Domestic","International"};
+    private String[] title = new String[]{"国内","国外"};
 
     public EducationAdapter(FragmentManager manager){
         super(manager);

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">记事本</string>
+    <string name="search">搜寻</string>
+    <string name="edit">修改</string>
+    <string name="choose">选课</string>
+    <string name="other">其他</string>
+    <string name="chachong">论文查重</string>
+    <string name="dial">联系学校</string>
+    <string name="money">摇一摇来抢红包！</string>
+    <string name="qs">2019年QS大学排行榜前100</string>
+    <string name="university">大学</string>
+    <string name="title">记事本</string>
+    <string name="save">保存</string>
+    <string name="stock">股票</string>
+    <string name="Stock">股票</string>
+    <string name="industry">行业信息与领涨股</string>
+    <string name="setting">设置</string>
+    <string name="more">更多</string>
+    <string name="about">关于</string>
+    <string name="game">娱乐</string>
+    <string name="education">学习</string>
+    <string name="edu_d_1">好大学在线</string>
+    <string name="edu_d_2">i春秋</string>
+    <string name="edu_d_3">51CTO</string>
+    <string name="edu_d_4">珠峰社区</string>
+    <string name="edu_d_5">翼狐网</string>
+    <string name="edu_d_6">万门大学</string>
+    <string name="edu_d_7">顶你学堂</string>
+    <string name="edu_d_8">开课吧</string>
+    <string name="edu_d_9">极客学院</string>
+    <string name="edu_d_10">计蒜客</string>
+    <string name="edu_d_11">MOOC中国</string>
+    <string name="edu_d_12">学堂在线</string>
+    <string name="edu_d_13">中国大学慕课</string>
+    <string name="edu_d_14">麦子学院</string>
+</resources>

@@ -2,20 +2,20 @@
     <string name="app_name">Wordpad</string>
     <string name="search">search</string>
     <string name="edit">Edit Wordpad</string>
-    <string name="title_activity_func_b">FuncB</string>
-    <string name="title_activity_slider">SliderActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="drawer_open">Open Drawer</string>
-    <string name="drawer_close">Close Drawer</string>
+    <string name="title_activity_func_b" translatable="false">FuncB</string>
+    <string name="title_activity_slider" translatable="false">SliderActivity</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="drawer_open" translatable="false">Open Drawer</string>
+    <string name="drawer_close" translatable="false">Close Drawer</string>
     <string name="title">Wordpad</string>
-    <string name="personal">Personal</string>
+    <string name="personal" translatable="false">Personal</string>
     <string name="save">Save</string>
-    <string name="news">News</string>
+    <string name="news" translatable="false">News</string>
     <string name="stock">Stock</string>
     <string name="Stock">Stock</string>
     <string name="industry">HANGYEXINXIYULINGZHANGGU</string>
@@ -23,8 +23,8 @@
     <string name="more">More</string>
     <string name="about">About</string>
     <string name="game">Game</string>
-    <string name="news1">news1</string>
-    <string name="news2">News2</string>
+    <string name="news1" translatable="false">news1</string>
+    <string name="news2" translatable="false">News2</string>
     <string name="education">Education</string>
     <string name="edu_d_1">Haodaxuezaixian</string>
     <string name="edu_d_2">Ichunqiu</string>
@@ -40,19 +40,26 @@
     <string name="edu_d_7">Dingnixuetang</string>
     <string name="edu_d_6">Wangmendaxue</string>
     <string name="edu_d_5">Yihuwang</string>
-    <string name="edu_i_1">Berkeley</string>
-    <string name="edu_i_2">MIT</string>
-    <string name="edu_i_3">CMU</string>
-    <string name="edu_i_4">Openlearn</string>
-    <string name="edu_i_5">Washington</string>
-    <string name="edu_i_6">Tufts</string>
-    <string name="edu_i_7">KhanAcademy</string>
-    <string name="edu_i_8">EDX</string>
-    <string name="edu_i_9">Coursera</string>
-    <string name="edu_i_10">TED</string>
+    <string name="edu_i_1" translatable="false">Berkeley</string>
+    <string name="edu_i_2" translatable="false">MIT</string>
+    <string name="edu_i_3" translatable="false">CMU</string>
+    <string name="edu_i_4" translatable="false">Openlearn</string>
+    <string name="edu_i_5" translatable="false">Washington</string>
+    <string name="edu_i_6" translatable="false">Tufts</string>
+    <string name="edu_i_7" translatable="false">KhanAcademy</string>
+    <string name="edu_i_8" translatable="false">EDX</string>
+    <string name="edu_i_9" translatable="false">Coursera</string>
+    <string name="edu_i_10" translatable="false">TED</string>
     <string name="university">University</string>
-    <string name="next">Next</string>
+    <string name="next" translatable="false">Next</string>
     <string name="qs">2019nianqsdaxuepaihangbangqian100</string>
-    <string name="back">Back</string>
+    <string name="back" translatable="false">Back</string>
+    <string name="money">Yaoyiyaolaiqianghongbao</string>
+    <string name="exit" translatable="false">Exit</string>
+    <string name="dial">Dial School</string>
+    <string name="returnfragment" translatable="false">Return</string>
+    <string name="chachong">Chachong</string>
+    <string name="other">Other</string>
+    <string name="choose">ChooseClass</string>
 
 </resources>
