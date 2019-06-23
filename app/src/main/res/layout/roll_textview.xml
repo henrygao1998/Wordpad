@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
-    android:background="@color/colorAccent"
+    android:background="#CA8346"
     android:orientation="horizontal">
 
     <ViewFlipper

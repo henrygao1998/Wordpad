@@ -9,7 +9,7 @@ public class ListChange extends Activity {
     
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.unviersity_model);
+		setContentView(R.layout.university_model);
 		
 		Bundle bundle=getIntent().getExtras();
 		int id = bundle.getInt("picture");

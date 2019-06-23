@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                         startActivity(intent2);
                         MainActivity.this.finish();
                         break;
-                    case R.id.menu_news:
+                    case R.id.menu_study:
                         /* 新建一个Intent对象 */
                         Intent intent3 = new Intent();
                         /* 指定intent要启动的类 */

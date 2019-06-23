@@ -34,4 +34,7 @@
     <string name="edu_d_12">学堂在线</string>
     <string name="edu_d_13">中国大学慕课</string>
     <string name="edu_d_14">麦子学院</string>
+    <string name="option">功能</string>
+    <string name="next">下一页</string>
+    <string name="back">上一页</string>
 </resources>

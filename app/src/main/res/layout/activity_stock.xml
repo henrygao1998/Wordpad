@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:gravity="center_vertical"
-        android:background="#87CEEB"
+        android:background="#4EA29A"
         android:orientation="vertical">
 
         <Button
@@ -46,7 +46,7 @@
         android:id="@+id/btn_step"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ba2a2a"
+        android:background="#E2D787"
         android:text="@string/industry" />
 
     <TextView

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="vertical"
-        android:background="#87CEEB"
+        android:background="#4EA29A"
         android:gravity="center_vertical">
 
         <Button
@@ -65,11 +65,11 @@
         <RadioButton
             android:id="@+id/radioFirst"
             style="@style/rg_btn_style"
-            android:drawableTop="@drawable/setting" />
+            android:drawableTop="@drawable/smile" />
         <RadioButton
             android:id="@+id/radioSecond"
             style="@style/rg_btn_style"
-            android:drawableTop="@drawable/setting" />
+            android:drawableTop="@drawable/strong" />
 
     </RadioGroup>
 

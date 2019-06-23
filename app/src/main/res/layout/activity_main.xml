@@ -18,7 +18,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="#87CEEB"
+            android:background="#4EA29A"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
@@ -45,6 +45,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/edit"
                 android:onClick="OnClick" />
 
@@ -55,7 +57,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="#2d9319"
+            android:background="#CA8346"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
@@ -75,9 +77,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_marginTop="10dp"
-            android:background="#81966F">
+            android:background="#E2D787">
 
         </ListView>
+        <!--<ImageView-->
+            <!--android:id="@+id/nodata"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:src="@drawable/personal"/>-->
 
 
     </LinearLayout>

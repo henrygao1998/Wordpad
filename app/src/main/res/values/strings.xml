@@ -51,9 +51,9 @@
     <string name="edu_i_9" translatable="false">Coursera</string>
     <string name="edu_i_10" translatable="false">TED</string>
     <string name="university">University</string>
-    <string name="next" translatable="false">Next</string>
+    <string name="next">Next</string>
     <string name="qs">2019nianqsdaxuepaihangbangqian100</string>
-    <string name="back" translatable="false">Back</string>
+    <string name="back">Back</string>
     <string name="money">Yaoyiyaolaiqianghongbao</string>
     <string name="exit" translatable="false">Exit</string>
     <string name="dial">Dial School</string>
@@ -61,5 +61,6 @@
     <string name="chachong">Chachong</string>
     <string name="other">Other</string>
     <string name="choose">ChooseClass</string>
+    <string name="option">Options</string>
 
 </resources>
