@@ -71,22 +71,29 @@
 
         </RelativeLayout>
 
-        <ListView
-            android:id="@+id/listview"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginTop="10dp"
-            android:background="#E2D787">
+            android:layout_height="match_parent">
 
-        </ListView>
-        <!--<ImageView-->
-            <!--android:id="@+id/nodata"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:src="@drawable/personal"/>-->
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
+                android:background="#E2D787">
 
+            </ListView>
 
+            <TextView
+                android:id="@+id/mtext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/nodata"
+                android:textSize="33dp" />
+
+        </FrameLayout>
     </LinearLayout>
 
     <!-- app:headerLayout : 指定头部布局的资源文件。

@@ -84,10 +84,9 @@ public class Edit extends Activity {
                 }
                 // 查看并修改一个已有的日志
                 else {
-                    Log.d("执行命令", "执行了该函数");
                     String updatesql = "update note set content='" + content + "' where _id=" + id;
                     dbread.execSQL(updatesql);
-                    // et_content.setText(last_content);
+
                 }
                 Intent data = new Intent();
                 setResult(2, data);

@@ -8,9 +8,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/wordpad"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/wordpad"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
@@ -31,7 +31,6 @@
         </activity>
         <activity android:name=".Stock" />
         <activity android:name=".StockListActivity" />
-        <activity android:name=".MyListActivity" />
         <activity android:name=".ListChange" />
         <activity android:name=".QSrank" />
         <activity android:name=".QSrank2" />

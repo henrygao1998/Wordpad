@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">记事本</string>
     <string name="search">搜寻</string>
     <string name="edit">修改</string>
     <string name="choose">选课</string>
@@ -37,4 +36,6 @@
     <string name="option">功能</string>
     <string name="next">下一页</string>
     <string name="back">上一页</string>
+    <string name="nodata">快来记录你的点点滴滴吧！</string>
+    <string name="app_name">柳林通</string>
 </resources>

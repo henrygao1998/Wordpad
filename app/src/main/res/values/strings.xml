@@ -62,5 +62,6 @@
     <string name="other">Other</string>
     <string name="choose">ChooseClass</string>
     <string name="option">Options</string>
+    <string name="nodata">NO DATA</string>
 
 </resources>

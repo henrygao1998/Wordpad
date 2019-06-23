@@ -27,7 +27,7 @@ import java.util.List;
 import static android.support.constraint.Constraints.TAG;
 
 public class StockListActivity extends ListActivity implements Runnable {
-    String data[] = {"wait..."};
+    String data[] = {"请稍后，即将获得最新股票行业相关信息，每分钟更新一次。。。"};
     Handler handler;
     private String logDate = "";
     private final String DATE_SP_KEY = "lastStockDateStr";
@@ -45,23 +45,23 @@ public class StockListActivity extends ListActivity implements Runnable {
             for(int i=1;i<100;i++){
                 list1.add("item" + i);
             }
-            ListAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list1);
+            ListAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,data);
             setListAdapter(adapter);
 
             Thread t = new Thread(this);
             t.start();
 
             handler = new Handler() {
-                @Override
-                public void handleMessage(Message msg) {
-                    if(msg.what==7){
-                        List<String> list2 = (List<String>) msg.obj;
-                        ListAdapter adapter = new ArrayAdapter<String>(StockListActivity.this,android.R.layout.simple_list_item_1,list2);
-                        setListAdapter(adapter);
-                    }
-                    super.handleMessage(msg);
+            @Override
+            public void handleMessage(Message msg) {
+                if(msg.what==7){
+                    List<String> list2 = (List<String>) msg.obj;
+                    ListAdapter adapter = new ArrayAdapter<String>(StockListActivity.this,android.R.layout.simple_list_item_1,list2);
+                    setListAdapter(adapter);
                 }
-            };
+                super.handleMessage(msg);
+            }
+        };
 
     }
 
@@ -84,7 +84,7 @@ public class StockListActivity extends ListActivity implements Runnable {
             Log.i("run","日期不相等，从网络中获取数据");
             Document doc = null;
             try {
-                Thread.sleep(0);
+                Thread.sleep(6000);
                 doc = Jsoup.connect("http://data.10jqka.com.cn/funds/hyzjl/").get();
                 Elements tables = doc.getElementsByTag("table");
                 Element table1 = tables.get(0);

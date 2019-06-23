@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
         tv_content = findViewById(R.id.tv_content);
         listview = findViewById(R.id.listview);
+        listview.setEmptyView(findViewById(R.id.mtext));
         dataList = new ArrayList<Map<String, Object>>();
         mContext = this;
 
@@ -88,7 +89,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         });
         DB = new NotesDB(this);
         dbread = DB.getReadableDatabase();
-        // 清空数据库中表的内容
+
+        // 清空内容
         //dbread.execSQL("delete from note");
         RefreshNotesList();
         listview.setOnItemClickListener(this);
@@ -155,7 +157,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                         /* 关闭当前的Activity */
                         MainActivity.this.finish();
                         break;
-                    //Toast.makeText(MainActivity.this, "个人信息", Toast.LENGTH_SHORT).show();
 
                     case R.id.menu_stock:
                         Intent intent4 = new Intent();
