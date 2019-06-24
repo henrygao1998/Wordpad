@@ -48,8 +48,9 @@
             android:id="@+id/tv_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello"
-            android:textSize="20dp" />
+            android:layout_gravity="center"
+            android:text="         本APP是一个面向西财大学生,可以记录管理笔记、促进学习效率、提升学习成绩和开阔视野的综合类软件。无沦是记录、修改、删除笔记，还是查看股票概况、查看慕课、选课、论文查重、联系学校、了解学校历史等，功能应有尽有，页面设计人性化。"
+            android:textSize="30dp" />
 
     </ScrollView>
 </LinearLayout>
