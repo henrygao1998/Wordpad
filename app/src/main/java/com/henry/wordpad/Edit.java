@@ -34,7 +34,6 @@ public class Edit extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        // 设置无标题
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_edit);
 
@@ -57,13 +56,11 @@ public class Edit extends Activity {
         Log.d("LAST_CONTENT", last_content);
         et_content.setText(last_content);
 
-        // 确认按钮的点击事件
         btn_ok = findViewById(R.id.btn_save);
         btn_ok.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
                 // 获取日志内容
                 String content = et_content.getText().toString();
-                Log.d("LOG1", content);
                 // 获取写日志时间
                 Date date = new Date();
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
@@ -72,13 +69,10 @@ public class Edit extends Activity {
                 String sql_count = "SELECT COUNT(*) FROM note";
                 SQLiteStatement statement = dbread.compileStatement(sql_count);
                 long count = statement.simpleQueryForLong();
-                Log.d("COUNT", count + "");
-                Log.d("ENTER_STATE", ENTER_STATE + "");
                 // 添加一个新的日志
                 if (ENTER_STATE == 0) {
                     if (!content.equals("")) {
                         sql = "insert into " + NotesDB.TABLE_NAME_NOTES + " values(" + count + "," + "'" + content + "'" + "," + "'" + dateNum + "')";
-                        Log.d("LOG", sql);
                         dbread.execSQL(sql);
                     }
                 }
